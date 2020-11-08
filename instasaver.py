@@ -14,7 +14,6 @@ def main():
     with tempfile.TemporaryDirectory() as temp:
         load = instaloader.Instaloader(
                 dirname_pattern=temp,
-                #filename_pattern='saved',
                 download_comments=False,
                 download_geotags=False,
                 download_video_thumbnails=False,
@@ -45,7 +44,6 @@ def check_post_url(loader, shortcode, temp):
     post = instaloader.Post.from_shortcode(loader.context, shortcode)
     loader.download_post(post, target=temp)
     file_list = [filename for filename in os.listdir(temp)]
-    #print(len(file_list))
     if len(file_list) == 1:
         try:
             st.image(f'{temp}/{file_list[0]}', use_column_width=True)
