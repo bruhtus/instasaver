@@ -10,7 +10,7 @@ from zipfile import ZipFile
 
 def main():
     st.title('Instasaver')
-    st.markdown("Save your chosen instagram's post (only for public profile)")
+    st.markdown("Save your chosen instagram's post (public profile only)")
     with tempfile.TemporaryDirectory() as temp:
         load = instaloader.Instaloader(
                 dirname_pattern=temp,
