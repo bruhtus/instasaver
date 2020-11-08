@@ -54,20 +54,32 @@ def check_post_url(loader, shortcode, temp):
             st.markdown(download_button(f'{temp}/{file_list[0]}', temp), unsafe_allow_html=True)
 
     else:
-        for filename in file_list:
-            try:
-                st.image(f'{temp}/{filename}', use_column_width=True)
-                st.markdown(download_button(f'{temp}/{filename}', temp), unsafe_allow_html=True)
+        with ZipFile(f'{temp}/{shortcode}_posts.zip', 'w') as zip:
+            for filename in file_list:
+                try:
+                    st.image(f'{temp}/{filename}', use_column_width=True)
+                    st.markdown(download_button(f'{temp}/{filename}', temp), unsafe_allow_html=True)
+                    zip.write(f'{temp}/{filename}')
 
-            except:
-                st.video(f'{temp}/{filename}')
-                st.markdown(download_button(f'{temp}/{filename}', temp), unsafe_allow_html=True)
+                except:
+                    st.video(f'{temp}/{filename}')
+                    st.markdown(download_button(f'{temp}/{filename}', temp), unsafe_allow_html=True)
+                    zip.write(f'{temp}/{filename}')
+
+        st.markdown(download_all_posts(f'{temp}/{shortcode}_posts.zip', temp), unsafe_allow_html=True)
 
 def download_button(bin_file, temp):
     with open(bin_file, 'rb') as f:
         data = f.read()
         bin_str = base64.b64encode(data).decode()
         href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download here</a>'
+        return href
+
+def download_all_posts(bin_file, temp):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+        bin_str = base64.b64encode(data).decode()
+        href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download all posts here</a>'
         return href
 
 if __name__ == '__main__':
