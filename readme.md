@@ -14,3 +14,4 @@ For more explaination you check my post [here](https://bruhtus.github.io/posts/i
 - [Streamlit](https://www.streamlit.io/).
 - [View public profile anonymous (more advance version)](https://insta-stories.ru/).
 - [Streamlit download file](https://discuss.streamlit.io/t/how-to-download-file-in-streamlit/1806/23).
+- [Deploy streamlit app to heroku example](https://github.com/tconkling/streamlit_heroku_example).
