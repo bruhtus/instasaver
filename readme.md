@@ -1,4 +1,4 @@
-# Instasaver
+# Instasaver [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/bruhtus/instasaver/instasaver.py)
 > This is just-for-fun project to save memes on instagram (hopefully only that).
 
 ## Using instaloader and streamlit python module
