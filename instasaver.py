@@ -20,13 +20,13 @@ def main():
                 save_metadata=False)
 
         url_input = st.text_input('Post Url')
-        
+
         try:
             if url_input:
                 load.post_metadata_txt_pattern = ''
                 shortcode = url_to_short_code(url_input)
                 check_post_url(load, shortcode, temp)
-        
+
         except AttributeError:
             st.write("It seems like it's not a url")
 
