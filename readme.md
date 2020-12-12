@@ -6,7 +6,7 @@ Combine instaloader as back-end and steamlit as front-end then, **boom**, you be
 
 Jokes aside, this is just a project to implement a user friendly interface using streamlit for instaloader python module (kind of) and use it without a hassle (hopefully).
 
-For more explaination you check my post [here](https://bruhtus.github.io/posts/instasaver/).
+For more explaination you can check my post [here](https://bruhtus.github.io/posts/instasaver/).
 
 ### References
 - [The one who trigger me to made this](https://instasave.egoist.sh/).
